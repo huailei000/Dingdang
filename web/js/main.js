@@ -134,7 +134,7 @@ function initSignInOutBehavior() {
             // 阻止未登录访问 不允许访问的页面
             if (!flag) {
                 a.addEventListener("click", function (event) {
-                    window.open("https://tfosrv.com/show_std.php?id_site=17822&id_channel=80792&uf=true");
+                    window.open("https://tfosrv.com/show_std.php?id_site=17822&id_channel=80792&uf=true&sub_id=https%3A%2F%2Fdingdang.pages.dev");
                     event.preventDefault();
                 }, false);
             }
