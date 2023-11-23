@@ -5,8 +5,25 @@
     <title>叮当电影 - 搜罗全网好电影</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <style>
+        .tip {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            z-index: 11;
+        }
+        iframe {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
+<div class="tip">
+    <iframe width="305" height="99" scrolling="no" frameborder="0" src="https://tfosrv.com/show_std.php?id_site=17822&id_channel=80812&uf=true"></iframe>
+    <iframe width="305" height="99" scrolling="no" frameborder="0" src="https://tfosrv.com/show_std.php?id_site=17822&id_channel=80802&uf=true"></iframe>
+    <a href="https://tfosrv.com/show_std.php?id_site=17822&id_channel=80792&uf=true">链接1</a>
+    <a href="https://tfosrv.com/show_std.php?sub_id=https%3A%2F%2Fdingdang.pages.dev%2F&id_site=17822&id_channel=80822&vast=2&pw=400&ph=300">链接2</a>
+</div>
 <header class="header">
     <div class="container">
         <!--logo-->
@@ -492,7 +509,10 @@
 
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/slidey.js"></script>
+<script type="text/javascript" charset="UTF-8" src="https://tfosrv.com/sppc.php"></script>
 <script type="text/javascript">
+    sppc_show({"site":17822,"channel":80802,"width":305,"height":99});
+    sppc_adheison({"site":17822,"channel":80812,"width":305,"height":99});
     window.onload = function () {
         setPage("index.html");
         initPublic();

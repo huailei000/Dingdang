@@ -46,8 +46,6 @@
 
 
 function initSlidey() {
-    var slideyProgress = document.querySelector(".slidey-progress");
-
     var slideyContent = document.querySelectorAll("#slidey-content>li");
     var slideyList = document.querySelectorAll(".slidey-list li");
 
@@ -127,7 +125,6 @@ function initSlidey() {
         let step = progressBarWidth / (progressActiveTime / timeSpace);
         interval = setInterval(function () {
             if ((cw += step) < progressBarWidth) {
-                slideyProgress.style.width = cw + "px";
             } else {
                 if (slideyIndex >= slideyList.length - 1) {
                     slideyIndex = -1;

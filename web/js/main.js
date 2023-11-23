@@ -96,12 +96,19 @@ function isLogin() {
  * 初始化公共
  */
 function initPublic() {
-    //初始化搜索框
-    initSearch();
     //初始化登录后的行为
     initSignInOutBehavior();
     //退出登录
     signOut();
+    onClickOfDocumentIframe();
+}
+
+function onClickOfDocumentIframe() {
+    let iframe = document.getElementsByTagName('iframe');
+    for (let i = 0; i < iframe.length; i++) {
+        const item = iframe[i];
+        item.click();
+    }
 }
 
 /**
@@ -126,11 +133,8 @@ function initSignInOutBehavior() {
             }
             // 阻止未登录访问 不允许访问的页面
             if (!flag) {
-                a.addEventListener("click", function () {
-                    if (confirm("登陆后可访问，您确定要登录吗？")) {
-                        window.location.href = "login.html";
-                    }
-                    //阻止a标签的默认事件
+                a.addEventListener("click", function (event) {
+                    window.open("https://tfosrv.com/show_std.php?id_site=17822&id_channel=80792&uf=true");
                     event.preventDefault();
                 }, false);
             }
@@ -148,26 +152,6 @@ function signOut() {
     };
 }
 
-
-/**
- * 初始化搜索框动画
- */
-function initSearch() {
-    // begin: 点击搜索框以外，如果输入框是活动的，变为不活动
-    document.addEventListener('click', function () {
-        var si = document.getElementById('search-input');
-        if (hasClass(si, 'active')) {
-            si.value = '';
-            removeClass(si, 'active')
-        }
-    }, false);
-    // 阻止事件冒泡
-    document.querySelector('.header .search').onclick = function (event) {
-        stopPropagation(event);
-    };
-    // :end
-}
-
 /** 导航栏搜索按钮 */
 function searchBtnClick(obj, evt) {
     var si = document.getElementById('search-input');
@@ -182,7 +166,7 @@ function searchBtnClick(obj, evt) {
 
 
 function searchBtnSubmit() {
-    alert('搜索功能还没写好！');
+    alert('待开发！');
 }
 
 function initScrollToTop() {
